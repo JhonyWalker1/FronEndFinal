@@ -10,11 +10,6 @@ const TourDetail = ({ itinerario, precio }) => {
 
   const handleOpenDialog = () => setOpen(!open);
   
-  const [tour, setTour] = useState({
-    tour_id: 0
-  });
-
-
   return (
     <div>
       <p>

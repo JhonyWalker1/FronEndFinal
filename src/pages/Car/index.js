@@ -63,7 +63,7 @@ const Car = () => {
                 <CardMedia                
                 component ="img" 
                 className = "img-tour"
-                image={tours.tour_foto}
+                image={tours.tour_foto1}
                 />
                 </Link>   
                 <CardContent className="center">
@@ -72,8 +72,8 @@ const Car = () => {
                <ButtonForProduct tours={tours}/>
             </p> 
                 <TourDetail
-                 itinerario={tours.tour_itinerario} 
-                 precio={tours.tour_precio} 
+                 itinerario={tours.tour_itinerario1} 
+                 precio={tours.tour_precio_oferta} 
                  tours= {tours}                
                  />
                 

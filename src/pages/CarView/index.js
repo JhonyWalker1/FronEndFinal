@@ -14,11 +14,12 @@ const CarView = () => {
   const idProfile = decodetoken.user_id;
   const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0]);
   const [total, setTotal] = useState(0);
+  const [hora, setHora] = useState(new Date().toLocaleTimeString());
 
   const calculatePrice = () => {
     let sum = 0;
     basket.forEach((product) => {
-      const finalPrice = +product.quantity * +product.tour_precio;
+      const finalPrice = +product.quantity * +product.tour_precio_oferta;
       sum += finalPrice;
     });
     setTotal(sum.toFixed(2));
@@ -38,15 +39,17 @@ const CarView = () => {
     basket.forEach((product) => {
       compraDetalle.push({
         tour_id: product.tour_id,
-        cantidad: product.quantity,
-        precio: total,
+        compratour_cantidad: product.quantity,
+        tour_precio_oferta: product.tour_precio_oferta,
       });
     });
     let data = {
       compra_fecha: fecha,
+      compra_hora: hora,
       compra_nro:nroOrden,
       user_id: idProfile,
       estado:"Pagado",
+      compratour_total: total,
       compratours: compraDetalle,
     };
     console.log(data)
@@ -71,7 +74,7 @@ const CarView = () => {
                         <img
                           width={200}
                           style={{ objectFit: "contain" }}
-                          src={product.tour_foto}
+                          src={product.tour_foto1}
                           alt=""
                         />
                       </Grid>
@@ -79,7 +82,7 @@ const CarView = () => {
                         <h4>{product.tour_nombre}</h4>
                       </Grid>
                       <Grid item md={3}>
-                        <p>$ {product.tour_precio}</p>
+                        <p>$ {product.tour_precio_oferta}</p>
                       </Grid>
                       <Grid item md={3}>
                         <div>

@@ -39,7 +39,6 @@ const OrderUser = () => {
         maxHeight: '100%',
       });
 
-
     return (
     
     <div>
@@ -60,7 +59,7 @@ const OrderUser = () => {
       <Grid container spacing={2} sx={{marginTop:"1rem",width:"100%",borderBottom: "solid 0.5px #E2E8EC",marginBottom:"25px"}}>
         <Grid item>
           <ButtonBase sx={{ width: 100, height: 128 }}>
-            <Img alt="complex" src={order.compratours[0].tour.tour_foto} />
+            <Img alt="complex" src={order.compratours[0].tour.tour_foto1} />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>
@@ -84,7 +83,7 @@ const OrderUser = () => {
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" component="div">
-            S/{order.compratours[0].compratour_total}
+            S/{order.compratours[0].tour_precio_oferta}
             </Typography>
           </Grid>
         </Grid>
