@@ -9,6 +9,7 @@ import PageMain from "../pages/PageMain";
 import Car from "../pages/Car";
 import CarView from "../pages/CarView";
 import CotiTours from "../pages/Compratours";
+import FinalView from "../pages/CompraEnd";
 
 
 const Router = () =>{
@@ -22,6 +23,7 @@ const Router = () =>{
                 <Route path="mastour" element={<Car />} />
                 <Route path="compratours/:id" element={<CotiTours />} />
                 <Route path="carview" element={<CarView />} />
+                <Route path="gracias" element={<FinalView />}/>
             </Route>
             <Route element={<PrivateUser />}>
                 <Route path="profile" element={<Profile />} />

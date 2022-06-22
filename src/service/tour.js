@@ -26,7 +26,7 @@ export const getDataFromTourDetail = async (id) => {
 };
 
 export const postCompraTourService = async (compra) => {
-  const response = await fetch(`${URL_BACKEND}/rutanecesa`, {
+  const response = await fetch(`${URL_BACKEND}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

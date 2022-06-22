@@ -39,7 +39,9 @@ const Main = () => {
     <Container sm>
         <Grid container alignItems="center" ml={5} mr={5}> 
           <Grid item md={1}>
+            <Link to="/">
              <img className="img-logo" id={1} src={ct} />
+             </Link>
           </Grid>
           <Grid item md={3} className="txt-field">
           <TextField

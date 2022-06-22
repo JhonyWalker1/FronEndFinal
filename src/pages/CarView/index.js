@@ -12,8 +12,7 @@ const CarView = () => {
   const token = localStorage.getItem("token");
   const decodetoken = JSON.parse(token);
   const idProfile = decodetoken.user_id;
-  const [fecha, setFecha] = useState(new Date());
-
+  const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0]);
   const [total, setTotal] = useState(0);
 
   const calculatePrice = () => {
@@ -29,24 +28,32 @@ const CarView = () => {
     calculatePrice();
   }, [basket]);
 
+    
   
   const handlePostCompra = async () => {
+    let nroOrden = Math.floor(Math.random() * 1000000);
+    
     // Logica de ordenamiento de datos
     let compraDetalle = [];
     basket.forEach((product) => {
       compraDetalle.push({
         tour_id: product.tour_id,
         cantidad: product.quantity,
-        precio: product.tour_precio,
+        precio: total,
       });
     });
     let data = {
-      fecha: fecha,
-      detalle: compraDetalle,
+      compra_fecha: fecha,
+      compra_nro:nroOrden,
+      user_id: idProfile,
+      estado:"Pagado",
+      compratours: compraDetalle,
     };
     console.log(data)
-    // const response = await postCompraTourService(data);
-    // console.log(response);
+    const response = await postCompraTourService(data);
+    console.log(response);
+    localStorage.removeItem("basket");
+    window.location.href = "/gracias";
   };
 
   return (
