@@ -6,6 +6,9 @@ import PrivateUser from "../layouts/PrivateUser/index";
 import Profile from "../pages/Profile";
 import OrderUser from "../pages/OrderUser";
 import PageMain from "../pages/PageMain";
+import Car from "../pages/Car";
+import CarView from "../pages/CarView";
+import CotiTours from "../pages/Compratours";
 
 
 const Router = () =>{
@@ -16,6 +19,9 @@ const Router = () =>{
             <Route path="signup" element={<Signup />} />
             <Route element={<Main />}>
                 <Route path="/" element={<PageMain />} />
+                <Route path="mastour" element={<Car />} />
+                <Route path="compratours/:id" element={<CotiTours />} />
+                <Route path="carview" element={<CarView />} />
             </Route>
             <Route element={<PrivateUser />}>
                 <Route path="profile" element={<Profile />} />

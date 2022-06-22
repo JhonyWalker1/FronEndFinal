@@ -1,12 +1,41 @@
-import { Card,CarouselItem,CarouselCaption,Carousel, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
+import { getAtractivo } from "../../service/firestore";
 import "./index.css";
+import { Card,CarouselItem,CarouselCaption,Carousel, Button } from "react-bootstrap";
 
-const PageMain = () => {
+const PopularRegion = () => {
+  const [region, setRegion] = useState([]);
 
+  const fetchRegion = async () => {
+    const data = await getAtractivo();
+    console.log(data);
+    setRegion(data);
+  };
 
-    return (
-     <Container maxWidth="lg">
+  const handleClick = async (name) => {
+    if (name === "costa") {
+      window.location.href = "/mastour";
+         return;
+     } else if (name === "sierra") {
+        window.location.href = "/mastour";
+        return;
+      } else if (name === "selva") {
+        window.location.href = "/mastour";
+        return;
+      }
+    
+      // Profesor porque en la pagina home donde esta mis cards automaticamente 
+      // se redirige a cualquiera de las pag de mis if sin yo hacer el click en ver más
+    
+  }
+
+  useEffect(() => {
+    fetchRegion();
+  }, []);
+
+  return (
+    <Container maxWidth="xl">
       <Grid container mt={1}>
         <Carousel fade className="carousel-width">
           <Carousel.Item interval={1000}>
@@ -46,8 +75,33 @@ const PageMain = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+        <Grid item md={12} sm={12} xs={12}>
+          <h1 style={{textAlign:"center", margin:"20px"}}>Popular Region</h1>
         </Grid>
-        </Container>
-    )
-}
-export default PageMain
+        {region.length > 0 &&
+          region.map((reg) => (
+            <Grid item md={4} sm={6} xs={12} className="card-pr">
+              <Card style={{ width: "30rem", height:"100%", marginLeft:"5px", textAlign: "center"}}>
+                <Card.Img variant="top" src={reg.photo} style={{height:"300px"}} />
+                <Card.Body>
+                  <Card.Title>{reg.nombre}</Card.Title>
+                  <Card.Text>
+                  {reg.contenido}
+                  </Card.Text>
+                  <Button variant="outline-primary" 
+                  size="lg" 
+                  className="btn-vermas" 
+                   onClick={()=>handleClick(reg.nombre)}  
+                  >
+                    Ver más</Button>{' '}
+                </Card.Body>
+              </Card>
+            </Grid>
+          ))}
+      </Grid>
+    </Container>
+  );
+};
+
+export default PopularRegion;

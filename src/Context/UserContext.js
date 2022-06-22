@@ -16,6 +16,14 @@ export const UserProvider = (props) => {
     setUser(dataUser);
   };
 
+   const storeBasketTour = (product) => {
+    const dataToStorage = [...basket, product];
+    setBasket(dataToStorage);
+    localStorage.setItem("basket", JSON.stringify(dataToStorage));
+};
+
+
+
   // vamos a guardar el objeto de cada producto
   const storeBasket = (product) => {
     // basket sera un array de objetos
@@ -34,35 +42,31 @@ export const UserProvider = (props) => {
     // }
   };
 
-  const deleteElementFromBasket = (id) => {
-    const products = basket.filter((bas) => bas.id !== id);
+  const deleteElementFromBasket = (tour_id)=> {
+    const products= basket.filter((bas)=> bas.tour_id !== tour_id);
     setBasket(products);
-    localStorage.setItem("basket", JSON.stringify(products));
-  };
+    localStorage.setItem("basket",JSON.stringify(products));
+};
 
-  const addOrRemoveProduct = (id, add) => {
-    // este id nos vas a servir para poder encontrar el product
-    // add es un bool por si add es true entonces suma sino resta
-    const products = basket.map((product) => {
-      // estamos buscando al producto que tenga el id que estamos recibiendo
-      if (product.id === id) {
-        if (add) {
-          product.quantity += 1;
-        } else {
-          // debemos validar que la cantidad minima para poder restar 1
-          if (product.quantity > 1) {
-            product.quantity -= 1;
+const addOrRemoveProduct = (tour_id,add) => {
+  const products = basket.map((product)=> {
+      if (product.tour_id ===tour_id){
+          if(add){
+              product.quantity += 1;
+          } else {
+            if (product.quantity > 1){
+              product.quantity -= 1;
+            }
           }
-        }
       }
-      // por ende despues del if el elemement quantity ha sido alterado
+
       return {
         ...product,
-      };
-    });
-    setBasket(products);
-    localStorage.setItem("basket", JSON.stringify(products));
-  };
+    };
+});
+setBasket(products);
+localStorage.setItem("basket",JSON.stringify(products));
+};
 
   return (
     <UserContext.Provider

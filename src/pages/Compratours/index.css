@@ -1,0 +1,67 @@
+
+
+
+.text-princi {
+    margin-left: 20px;
+}
+
+
+.valor {
+    margin-top: 30px;
+    font-weight: 700;
+    text-align: center;
+    color:#FC8C04;
+    
+}
+
+.precio-normal {
+    text-align: center;
+
+}
+
+.mas_promo {
+    color: blue;
+    font-weight: 800;
+}
+
+.but_uno {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.but_dos {
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.titlevigencia {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.Box {
+   
+    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #EFF7EE;
+    width: 24em;
+    height: 15em;
+    overflow: hidden;
+}
+
+.img_fam {
+    align-self: center;
+    width: 12.5em;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+  
+  
