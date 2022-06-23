@@ -5,6 +5,7 @@ import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import { postCompraTourService } from "../../service/tour";
+import { Navigate } from "react-router-dom";
 
 const CarView = () => {
   const { basket, addOrRemoveProduct, user } = useContext(UserContext);
@@ -29,6 +30,10 @@ const CarView = () => {
     calculatePrice();
   }, [basket]);
 
+  
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
     
   
   const handlePostCompra = async () => {

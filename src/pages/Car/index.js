@@ -1,27 +1,37 @@
 import { useEffect, useState,useContext } from "react";
 import {Container, Card, CardContent, CardMedia, Grid, Button} from "@mui/material";
-import { getDataFromTour } from "../../service/tour";
+import { getDataFromTour,getDataTourPorRegion } from "../../service/tour";
 import TourDetail from "../../components/TourDetail";
 import { UserContext } from "../../Context/UserContext";
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 
 const Car = () => {   
-     
+    
+    const {id_region} = useParams();
+
     const {basket, storeBasket,deleteElementFromBasket} = useContext(UserContext);
 
     const [tours,setTours] = useState([]);
 
-    const fetchTourList = async () => {
+    /* const fetchTourList = async () => {
         const ListTours = await getDataFromTour();
 
         console.log("listTours.content", ListTours.content);
         setTours(ListTours.content);
 
-    };
+    }; */
+
+    const fetchTourListPorRegion = async () => {
+      const response = await getDataTourPorRegion(id_region);
+      setTours(response.content.Tour);
+      console.log("response", response.content.Tour);
+
+    }
 
     const ButtonForProduct = ({ tours })=> {
     const findProduct = basket.find((bas)=> bas.tour_id === tours.tour_id);
+  
   
       return (
         <>
@@ -47,14 +57,14 @@ const Car = () => {
   
 
     useEffect(()=>{
-        fetchTourList();
+      fetchTourListPorRegion();
     },[]);    
 
     return(
         <Container>
           <h1>Tours</h1>
           <Grid container spacing={3}> 
-          {tours.length > 0 &&
+          {
             tours.map((tours)=>(
              <Grid item md={6} lg={6} sm={12} xs={12}> 
              

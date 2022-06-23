@@ -1,6 +1,4 @@
-import { URL_BACKEND_POST_COMPRA , URL_ALL_TOUR , URL_DETALLE_TOUR } from "../enviroments/index";
-
-
+import { URL_BACKEND_POST_COMPRA , URL_ALL_TOUR , URL_DETALLE_TOUR , URL_TOUR_POR_REGION } from "../enviroments/index";
 
 export const getDataFromTour = async () => {
   try {
@@ -12,15 +10,28 @@ export const getDataFromTour = async () => {
   }
 };
 
+export const getDataTourPorRegion = async (id) => {
+  try{
+    const response = await fetch(`${URL_TOUR_POR_REGION}/${id}/tour`);
+    const data = await response.json();
+    return data;
+  }catch(error){
+    console.log(error.message);
+  }
+}
+
+
 export const getDataFromTourDetail = async (id) => {
   try {
-    const reposnse = await fetch(`${URL_DETALLE_TOUR}/${id}`);
-    const data = await reposnse.json();
+    const response = await fetch(`${URL_DETALLE_TOUR}/${id}`);
+    const data = await response.json();
     return data;
   } catch (error) {
     console.log(error.message);
   }
 };
+
+
 
 export const postCompraTourService = async (compra) => {
   const response = await fetch(`${URL_BACKEND_POST_COMPRA}`, {

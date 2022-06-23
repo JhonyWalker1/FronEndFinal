@@ -1,6 +1,4 @@
-const URL_CREATE_USER = "http://localhost:8000/api/v1/tour/registrousuario";
-const URL_IMAGE_PROFILE_USER="http://localhost:8000/api/v1/tour/usuarioimageprofile"
-
+import { URL_CREATE_USER , URL_IMAGE_PROFILE_USER } from '../enviroments/index';
 
 export const createUser = async (user) => {
     try {

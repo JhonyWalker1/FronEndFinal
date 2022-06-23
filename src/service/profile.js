@@ -1,5 +1,4 @@
-const URLPROFILE = 'http://localhost:8000/api/v1/tour/clientedetalle';
-const URL_ORDER_USER = 'http://localhost:8000/api/v1/tour/cliente';
+import { URLPROFILE,URL_ORDER_USER } from '../enviroments/index';
 
 export const getUserDetail = async (id) => {
     try{

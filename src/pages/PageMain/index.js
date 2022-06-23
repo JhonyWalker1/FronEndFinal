@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { getAtractivo } from "../../service/firestore";
+import { Link } from "react-router-dom";
 import "./index.css";
 import { Card,CarouselItem,CarouselCaption,Carousel, Button } from "react-bootstrap";
 
@@ -89,12 +90,13 @@ const PopularRegion = () => {
                   <Card.Text>
                   {reg.contenido}
                   </Card.Text>
+                  <Link to={`/mastour/${reg.id}`}>
                   <Button variant="outline-primary" 
                   size="lg" 
                   className="btn-vermas" 
-                   onClick={()=>handleClick(reg.nombre)}  
                   >
-                    Ver más</Button>{' '}
+                    Ver más</Button>
+                    </Link>
                 </Card.Body>
               </Card>
             </Grid>
