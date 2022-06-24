@@ -30,11 +30,7 @@ const CarView = () => {
     calculatePrice();
   }, [basket]);
 
-  
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-    
+ 
   
   const handlePostCompra = async () => {
     let nroOrden = Math.floor(Math.random() * 1000000);
@@ -66,16 +62,18 @@ const CarView = () => {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={3} mt={5}>
+      <Grid container spacing={1} mt={5}>
+        <Grid item md={12}>
+        <h2>Carrito de Tours:</h2>
+        </Grid>
         <Grid item md={8}>
-          <h2>Carrito de Tours:</h2>
           <Grid container spacing={3}>
             {basket.map((product) => (
               <Grid item md={12}>
                 <Card>
                   <CardContent>
                     <Grid container spacing={3}>
-                      <Grid item md={3}>
+                      <Grid item md={4} xs={12}>
                         <img
                           width={200}
                           style={{ objectFit: "contain" }}
@@ -83,13 +81,13 @@ const CarView = () => {
                           alt=""
                         />
                       </Grid>
-                      <Grid item md={3}>
+                      <Grid item md={2} xs={12}>
                         <h4>{product.tour_nombre}</h4>
                       </Grid>
-                      <Grid item md={3}>
+                      <Grid item md={3} xs={12}>
                         <p>$ {product.tour_precio_oferta}</p>
                       </Grid>
-                      <Grid item md={3}>
+                      <Grid item md={3} xs={12}>
                         <div>
                           <Button
                             onClick={() =>

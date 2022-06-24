@@ -66,7 +66,7 @@ const Car = () => {
           <Grid container spacing={3}> 
           {
             tours.map((tours)=>(
-             <Grid item md={6} lg={6} sm={12} xs={12}> 
+             <Grid item md={4} xs={12}> 
              
               <Card className="card-tour">        
               <Link to ={`/compratours/${tours.tour_id}`}>     
@@ -84,9 +84,8 @@ const Car = () => {
                 <TourDetail
                  itinerario={tours.tour_itinerario1} 
                  precio={tours.tour_precio_oferta} 
-                 tours= {tours}                
+                 tours= {tours.tour_id}                
                  />
-                
                 </CardContent>
               </Card>
              </Grid>

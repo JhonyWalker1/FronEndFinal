@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { Button, Dialog, DialogContent } from "@mui/material";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 
-const TourDetail = ({ itinerario, precio }) => {
+const TourDetail = ({ itinerario, precio,tours }) => {
 
   const [open, setOpen] = useState(false);
 
@@ -32,10 +33,12 @@ const TourDetail = ({ itinerario, precio }) => {
               onClick={handleOpenDialog}
               variant="contained"
               color="secondary">Cerrar</Button>
+             <Link to ={`/compratours/${tours}`} className="underline">
              <Button className="button-basket"
               onClick={handleOpenDialog}
               variant="contained"
               color="secondary">Ver más detalles</Button>
+              </Link>
           </p>
         </DialogContent>
       </Dialog>

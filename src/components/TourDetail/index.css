@@ -16,3 +16,7 @@ text-transform: capitalize !important;
 display: flex ;
 justify-content: center;
 }
+
+.underline{
+  text-decoration: none;
+}
