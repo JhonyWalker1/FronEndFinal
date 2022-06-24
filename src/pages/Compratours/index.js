@@ -103,9 +103,6 @@ const CotiTours = () => {
           
           </Card.Text>
           </div>
-          <div class="but_uno">
-            <Button variant="outlined" color='primary'>COMPRAR</Button>
-          </div>
           <div class="but_dos">
             <Button variant="outlined"
               color='primary'
