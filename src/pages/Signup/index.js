@@ -48,9 +48,9 @@ const Signup = () => {
   };
 
   return (
-    <Container maxWidth="md" className="contenedor">
-      <form id="Myform">
-        <Grid container spacing={1} className="contenedor_center">
+    <Container>
+      <form id="Myform">  
+        <Grid container spacing={1} className="contenedor_center" md={12}>
           <Grid item md={12} xs={12}>
             <h2>Crear Cuenta</h2>
           </Grid>
@@ -157,7 +157,8 @@ const Signup = () => {
               Iniciar Sesión
             </Button>
           </Grid>
-        </Grid>
+          </Grid>
+        
       </form>
     </Container>
   );

@@ -31,15 +31,14 @@ const CotiTours = () => {
     fetchTourDetail();
   }, [])
 
-  return (
-    
+  return ( 
     <Grid container spacing={2}>
-    <Card.Text></Card.Text>
-     
+      <Grid item md={12}>
       <h1><Card.Text>
       {tour.tour_nombre}
       </Card.Text>
       </h1>
+        </Grid>   
       <Grid item md={8} xs={12}>
         <Card style={{ width: '40rem' }}>
           {/* comienzo de carrucel */}
@@ -48,23 +47,35 @@ const CotiTours = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src={tour.tour_foto}
-                  //src="https://coviperu.com/wp-content/uploads/2019/12/1200x800.jpg"
-                  //src={tour.first_image}
+                  src={tour.tour_foto1}
                   alt="Laguna de Huacachina"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="https://www.laciudad.net/wp-content/uploads/2021/02/Bruja-de-Cachiche-1200x900.jpg"
+                  src={tour.tour_foto2}
                   alt="La Bruja de Cachiche"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="https://www.actualidadambiental.pe/wp-content/uploads/2020/09/0-Paracas-Walter-H.-Wust.jpg"
+                  src={tour.tour_foto3}
+                  alt="Reserva de Paracas - Ica"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={tour.tour_foto4}
+                  alt="Reserva de Paracas - Ica"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={tour.tour_foto5}
                   alt="Reserva de Paracas - Ica"
                 />
               </Carousel.Item>
@@ -91,9 +102,6 @@ const CotiTours = () => {
           </strike>&nbsp;&nbsp;Precio Normal
           
           </Card.Text>
-          </div>
-          <div class="but_uno">
-            <Button variant="outlined" color='primary'>COMPRAR</Button>
           </div>
           <div class="but_dos">
             <Button variant="outlined"
@@ -127,6 +135,7 @@ const CotiTours = () => {
                 <Card.Title><strong>Información</strong></Card.Title>
                 <Card.Text>
                   {tour.tour_descripcion}
+               
                 </Card.Text>
                 <Card.Text>
                  
@@ -152,7 +161,11 @@ const CotiTours = () => {
               <Card.Body>
                 <Card.Title><strong>Itinerario</strong></Card.Title>
                 <Card.Text>
-                  {tour.tour_itinerario}
+                  {tour.tour_itinerario1}
+                  {tour.tour_itinerario2}
+                  {tour.tour_itinerario3}
+                  {tour.tour_itinerario4}
+                  {tour.tour_itinerario5}
                 </Card.Text>
                 <Card.Text>                
                 </Card.Text>
@@ -173,7 +186,15 @@ const CotiTours = () => {
             <div class="Box">
               <Card.Body>
                 <div class="titlevigencia">
-                <Card.Title><strong>Vigencia de la Promoción</strong></Card.Title>               
+                <Card.Title><strong>Más Detalles</strong></Card.Title>
+                <Card.Text>
+                  Incluye: 
+                  {tour.tour_incluye}
+                </Card.Text>   
+                <Card.Text>
+                  No Incluye: 
+                  {tour.tour_noincluye}
+                </Card.Text>             
                 <Card.Text>
                  Desde&nbsp;&nbsp;{tour.tour_fecha_inicio}
                 </Card.Text>
