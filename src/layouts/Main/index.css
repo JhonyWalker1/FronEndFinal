@@ -26,3 +26,26 @@
   display: flex;
   align-items: center;
 }
+
+.foot_princ {
+  background-color: rgb(213, 222, 214);
+  border: 3px solid;
+  width: 72%;
+  height: 300px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.title-foot {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  
+}
+
+
+.foot-copy {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}

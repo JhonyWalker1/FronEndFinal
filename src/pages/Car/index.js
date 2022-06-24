@@ -17,7 +17,7 @@ const Car = () => {
     /* const fetchTourList = async () => {
         const ListTours = await getDataFromTour();
 
-        console.logg("listTours.content", ListTours.content);
+        console.log("listTours.content", ListTours.content);
         setTours(ListTours.content);
 
     }; */
