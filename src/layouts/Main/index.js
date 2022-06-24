@@ -19,9 +19,6 @@ const Main = () => {
     sessionStorage.clear();
     /* window.location.reload(); */
   }
-
-
-
   const renderButtonisLogged = () => (
     <ButtonGroup variant="outlined" aria-label="outlined button group">
             <Button component={Link} to="/profile">Mi cuenta</Button>
@@ -68,7 +65,8 @@ const Main = () => {
             </li>
             <li className="li-basket">
             <Link to="/carview">Basket 
-            <Badge badgeContent={basket ? basket.length : 0} color="primary">
+            <Badge 
+            badgeContent={basket ? basket.length : 0} color="primary">
              <ShoppingCartRoundedIcon/> 
             </Badge>
             </Link>

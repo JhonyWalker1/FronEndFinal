@@ -25,7 +25,7 @@ const Login = () => {
   };
   const handleClickLogin = async () => {
     try{
-      await fetch ("http://127.0.0.1:8000/eccomerce/token/", {
+      await fetch ("https://apibackendtour.herokuapp.com/eccomerce/token/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

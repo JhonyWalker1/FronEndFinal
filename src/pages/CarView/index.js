@@ -30,11 +30,7 @@ const CarView = () => {
     calculatePrice();
   }, [basket]);
 
-  
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-    
+ 
   
   const handlePostCompra = async () => {
     let nroOrden = Math.floor(Math.random() * 1000000);
@@ -66,7 +62,7 @@ const CarView = () => {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={3} mt={5}>
+      <Grid container spacing={1} mt={5}>
         <Grid item md={8}>
           <h2>Carrito de Tours:</h2>
           <Grid container spacing={3}>
