@@ -8,7 +8,7 @@ import { postCompraTourService } from "../../service/tour";
 import { Navigate } from "react-router-dom";
 
 const CarView = () => {
-  const { basket, addOrRemoveProduct, user } = useContext(UserContext);
+  const { basket, addOrRemoveProduct,deleteElementFromBasket ,user } = useContext(UserContext);
 
   const token = localStorage.getItem("token");
   const decodetoken = JSON.parse(token);
@@ -107,6 +107,12 @@ const CarView = () => {
                             <AddRoundedIcon />
                           </Button>
                         </div>
+                        <Button 
+                        onClick={() => deleteElementFromBasket(product.tour_id)}
+                        variant="contained" color="error">
+                  Delete
+                  <DeleteForeverRoundedIcon />
+                </Button>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -130,10 +136,7 @@ const CarView = () => {
                 >
                   Book Now
                 </Button>
-                <Button variant="contained" color="error">
-                  Delete
-                  <DeleteForeverRoundedIcon />
-                </Button>
+               
               </p>
             </CardContent>
           </Card>
