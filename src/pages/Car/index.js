@@ -86,7 +86,6 @@ const Car = () => {
                  precio={tours.tour_precio_oferta} 
                  tours= {tours}                
                  />
-                
                 </CardContent>
               </Card>
              </Grid>
