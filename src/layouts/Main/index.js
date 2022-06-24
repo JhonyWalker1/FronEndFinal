@@ -36,6 +36,7 @@ const Main = () => {
   )
 
   return (
+    <div>
     <Container sm>
         <Grid container alignItems="center" ml={5} mr={5}> 
           <Grid item md={1}>
@@ -87,6 +88,76 @@ const Main = () => {
       <Outlet />
       </Container>
 
+{/*Inicio de Footer*/}
+
+<div className="foot_princ">
+<div className="main-footer">
+<div className="container">
+<div className="row">
+{/*Column 1 */}
+
+<div className="col-md-3 col-sm-6">
+<div class="title-foot"> 
+<h4>Lorem Ipsum</h4>
+</div>
+<div className="card-foot">
+<ul className="list-unstyled"> 
+    <li><a href="/">Lorem ipsum</a></li>
+    <li><a href="#">Lorem ipsum</a></li>
+    <li><a href="#">Lorem ipsum</a></li>    
+    <li><a href="#">Lorem ipsum</a></li>            
+</ul>        
+</div>
+</div>
+{/*Column 2 */}
+<div className="col-md-3 col-sm-6">
+<div class="title-foot"> 
+<h4>Lorem Ipsum</h4>
+</div>
+<ul className="list-unstyled"> 
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>    
+<li><a href="#">Lorem ipsum</a></li>            
+</ul>        
+</div>
+{/*Column 3 */}
+<div className="col-md-3 col-sm-6">
+<div class="title-foot"> 
+<h4>Lorem Ipsum</h4>
+</div>
+<ul className="list-unstyled"> 
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>    
+<li><a href="#">Lorem ipsum</a></li>            
+</ul>        
+</div>
+{/*Column 4 */}
+<div className="col-md-3 col-sm-6">
+<div class="title-foot"> 
+<h4>Lorem Ipsum</h4>
+</div>
+<ul className="list-unstyled"> 
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>
+<li><a href="#">Lorem ipsum</a></li>    
+<li><a href="#">Lorem ipsum</a></li>            
+</ul>        
+</div>
+</div>
+{/* Footer Bootom */}
+<div className="foot-copy">
+<div className="footer-bottom">
+    <p className="text-xs-center">
+    &copy;{new Date().getFullYear()} CodiGO-13 - All Rights Reserved
+    </p>
+</div>
+</div>
+</div>
+</div> 
+</div>
+</div>
   );
 };
 

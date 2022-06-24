@@ -83,19 +83,26 @@ const PopularRegion = () => {
         {region.length > 0 &&
           region.map((reg) => (
             <Grid item md={4} sm={6} xs={12} className="card-pr">
-              <Card style={{ width: "30rem", height:"100%", marginLeft:"5px", textAlign: "center"}}>
-                <Card.Img variant="top" src={reg.photo} style={{height:"300px"}} />
+              
+              <Card style={{ width: "22rem", height:"100%", marginLeft:"5px", textAlign: "center"}}>
+                <Card.Img variant="top" src={reg.photo} style={{height:"300px"
+            }} />
                 <Card.Body>
-                  <Card.Title>{reg.nombre}</Card.Title>
+                  <div class="card-region">
+                  <Card.Title><h2>{reg.nombre}</h2></Card.Title>
+                  
                   <Card.Text>
                   {reg.contenido}
                   </Card.Text>
+                  </div>
                   <Link to={`/mastour/${reg.id}`}>
+                  <div>
                   <Button variant="outline-primary" 
                   size="lg" 
                   className="btn-vermas" 
                   >
                     Ver más</Button>
+                    </div>
                     </Link>
                 </Card.Body>
               </Card>
