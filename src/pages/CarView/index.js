@@ -5,17 +5,16 @@ import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import { postCompraTourService } from "../../service/tour";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CarView = () => {
-  const { basket, addOrRemoveProduct,deleteElementFromBasket ,user } = useContext(UserContext);
-
-  const token = localStorage.getItem("token");
-  const decodetoken = JSON.parse(token);
-  const idProfile = decodetoken.user_id;
+  const { basket, addOrRemoveProduct, deleteElementFromBasket, user } = useContext(UserContext);
   const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0]);
   const [total, setTotal] = useState(0);
   const [hora, setHora] = useState(new Date().toLocaleTimeString());
+  const [idUser, setIdUser] = useState();
+
+  const navigate = useNavigate();
 
   const calculatePrice = () => {
     let sum = 0;
@@ -27,14 +26,18 @@ const CarView = () => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if(token){
+      const decodetoken = JSON.parse(token);
+      const idProfile = decodetoken.user_id;
+      setIdUser(idProfile);
+    }
     calculatePrice();
   }, [basket]);
 
- 
-  
   const handlePostCompra = async () => {
     let nroOrden = Math.floor(Math.random() * 1000000);
-    
+
     // Logica de ordenamiento de datos
     let compraDetalle = [];
     basket.forEach((product) => {
@@ -47,9 +50,9 @@ const CarView = () => {
     let data = {
       compra_fecha: fecha,
       compra_hora: hora,
-      compra_nro:nroOrden,
-      user_id: idProfile,
-      estado:"Pagado",
+      compra_nro: nroOrden,
+      user_id: idUser,
+      estado: "Pagado",
       compratour_total: total,
       compratours: compraDetalle,
     };
@@ -57,14 +60,18 @@ const CarView = () => {
     const response = await postCompraTourService(data);
     console.log(response);
     localStorage.removeItem("basket");
-    window.location.href = "/gracias";
+    if(idUser){
+      navigate("/gracias");
+    }else{
+    navigate("/login");
+    }
   };
 
   return (
     <Container maxWidth="xl">
       <Grid container spacing={1} mt={5}>
         <Grid item md={12}>
-        <h2>Carrito de Tours:</h2>
+          <h2>Carrito de Tours:</h2>
         </Grid>
         <Grid item md={8}>
           <Grid container spacing={3}>
@@ -107,12 +114,12 @@ const CarView = () => {
                             <AddRoundedIcon />
                           </Button>
                         </div>
-                        <Button 
-                        onClick={() => deleteElementFromBasket(product.tour_id)}
-                        variant="contained" color="error">
-                  Delete
-                  <DeleteForeverRoundedIcon />
-                </Button>
+                        <Button
+                          onClick={() => deleteElementFromBasket(product.tour_id)}
+                          variant="contained" color="error">
+                          Delete
+                          <DeleteForeverRoundedIcon />
+                        </Button>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -136,7 +143,7 @@ const CarView = () => {
                 >
                   Book Now
                 </Button>
-               
+
               </p>
             </CardContent>
           </Card>
