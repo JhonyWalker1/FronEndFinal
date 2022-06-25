@@ -1,28 +1,28 @@
-.ul-ecommerce {
+.nav{
   display: flex;
-  justify-content:space-evenly;
-  list-style: none;
+  justify-content: space-evenly;
+}
 
+.ul-ecommerce {
+  margin-top: 20px;
+  display: flex;
+  justify-content:space-between;
+  list-style: none;
 }
 .ul-ecommerce li a {
   text-decoration: none;
-  margin: 10px;
 }
-
-.txt-field {
-  
+/* .txt-field {
   width: 50px;
   text-align: center;
 }
-
-
+ */
 .img-logo {
   width: 100px;
   height: 100px;
 }
 
 .li-basket {
-  margin-left: 55px;
   display: flex;
   align-items: center;
 }
