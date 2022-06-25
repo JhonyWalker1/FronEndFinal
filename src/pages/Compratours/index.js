@@ -9,7 +9,8 @@ import { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./index.css";
 import {getDataFromTourDetail} from '../../service/tour'
-
+import { UserContext } from "../../Context/UserContext";
+import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 
 
 
@@ -19,6 +20,8 @@ const CotiTours = () => {
 
   const { id } = useParams();
 
+  const {basket, storeBasket,deleteElementFromBasket} = useContext(UserContext);
+
   const [tour, setTour] = useState("");
 
   const fetchTourDetail = async () => {
@@ -26,6 +29,32 @@ const CotiTours = () => {
     console.log("response", response);
     setTour(response.content);
   }
+
+  const ButtonForProduct = ({ tours })=> {
+    const findProduct = basket.find((bas)=> bas.tour_id === tours.tour_id);
+  
+  
+      return (
+        <>
+        { findProduct ? (
+            <Button
+            onClick={()=> deleteElementFromBasket(tours.tour_id)}
+            className="button-basket" 
+            variant="contained" 
+            color="error">Delete<DeleteForeverRoundedIcon/>
+            </Button>
+          ) : (
+            <Button 
+            onClick={() => 
+            storeBasket(tours)         
+            } 
+            className="button-basket" 
+            variant="contained" 
+            color="primary">+ Add to basket</Button>
+          )}
+        </>
+      );
+    };
 
   useEffect(() => {
     fetchTourDetail();
@@ -104,9 +133,10 @@ const CotiTours = () => {
           </Card.Text>
           </div>
           <div class="but_dos">
-            <Button variant="outlined"
-              color='primary'
-              startIcon={<AddShoppingCartRoundedIcon />}>AÑADIR AL CARRO</Button>
+          <p>
+               <ButtonForProduct tours={tour}/>
+            </p> 
+            
               <Card.Text></Card.Text>
               <Card.Text>
               Stock&nbsp;&nbsp;<em><u>{tour.tour_stock}</u></em>&nbsp;&nbsp;Disponible
