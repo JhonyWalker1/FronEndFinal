@@ -30,7 +30,7 @@
 .foot_princ {
   background-color: rgb(213, 222, 214);
   border: 3px solid;
-  width: 72%;
+  width: 75%;
   height: 300px;
   margin: auto;
   margin-top: 20px;
@@ -48,4 +48,8 @@
   font-size: 20px;
   font-weight: 700;
   text-align: center;
+}
+
+.card-foot {
+  text-decoration: none;
 }

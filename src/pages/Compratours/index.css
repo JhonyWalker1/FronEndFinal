@@ -8,6 +8,7 @@
 
 .valor {
     margin-top: 30px;
+    font-size: 40pt;
     font-weight: 700;
     text-align: center;
     color:#FC8C04;
@@ -38,7 +39,7 @@
 .titlevigencia {
     text-align: center;
     font-size: 18px;
-    font-weight: 700;
+    /*font-weight: 700;*/
 }
 
 .Box {

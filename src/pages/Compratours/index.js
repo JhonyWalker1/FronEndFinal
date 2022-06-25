@@ -92,13 +92,13 @@ const CotiTours = () => {
 
       <Grid item md={4}>
         <Card>
-          <div>
-            <h2 class="valor">S/ 74.90</h2>
+          <div class="valor">
+          S/&nbsp;{tour.tour_precio_oferta}
           </div>
           <div class="precio-normal">
           <Card.Text>
           <strike>
-          {tour.tour_precio}
+          S/&nbsp;{tour.tour_precio}
           </strike>&nbsp;&nbsp;Precio Normal
           
           </Card.Text>
@@ -182,7 +182,7 @@ const CotiTours = () => {
         <Grid item md={6} xs={12}>
           {/* tercera fila de CONDICIONES*/}
           <Grid>
-            <Card style={{ width: '25rem' }}>
+            <Card style={{ width: '26rem' }}>
             <div class="Box">
               <Card.Body>
                 <div class="titlevigencia">
@@ -196,10 +196,11 @@ const CotiTours = () => {
                   {tour.tour_noincluye}
                 </Card.Text>             
                 <Card.Text>
-                 Desde&nbsp;&nbsp;{tour.tour_fecha_inicio}
+                 Desde&nbsp;&nbsp;{tour.tour_fecha_inicio}&nbsp;&nbsp;
+                 Hasta&nbsp;&nbsp;{tour.tour_fecha_fin}
                 </Card.Text>
                 <Card.Text>
-                  Hasta&nbsp;&nbsp;{tour.tour_fecha_fin}
+                  
                 </Card.Text>
                 </div>
               </Card.Body>
@@ -217,7 +218,7 @@ const CotiTours = () => {
 
       <Grid item md={4}>
         <Grid item md={6} xs={12}>
-          <Card style={{ width: '25rem' }}>
+          <Card style={{ width: '24rem' }}>
             <Card.Img variant="top" src="http://www.peru-tours.com.pe/tarapoto/lago_lindo_tarapoto.jpg" />
             <Card.Body>
               <Card.Title>Tarapoto</Card.Title>
@@ -235,7 +236,7 @@ const CotiTours = () => {
       {/* Segunda fila */}
       <Grid item md={4}>
         <Grid item md={6} xs={12}>
-          <Card style={{ width: '25rem' }}>
+          <Card style={{ width: '24rem' }}>
             <Card.Img variant="top" src="http://www.traveltoperusites.com/wp-content/uploads/2019/06/paquete-fiestas-patrias-cusco02.jpg" />
             <Card.Body>
               <Card.Title>Cusco</Card.Title>
@@ -253,7 +254,7 @@ const CotiTours = () => {
       {/* tercera fila */}
       <Grid item md={4}>
         <Grid item md={6} xs={12}>
-          <Card style={{ width: '25rem' }}>
+          <Card style={{ width: '24rem' }}>
             <Card.Img variant="top" src="https://www.magicalperuexpeditions.com/wp-content/uploads/2019/10/Atracciones-turisticas-en-Peru.jpg" />
             <Card.Body>
               <Card.Title>Tumbes</Card.Title>
