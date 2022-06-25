@@ -7,6 +7,10 @@ import { Outlet, Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { Navigate } from "react-router-dom";
+import ft from "../../assets/Image/fate.png";
+import ip from "../../assets/Image/insta_pro.png";
+import yt from "../../assets/Image/youtube.png";
+
 
 
 
@@ -100,50 +104,57 @@ const Main = () => {
 </div>
 <div className="card-foot">
 <ul className="list-unstyled"> 
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>    
-    <li>Lorem ipsum</li>            
+    <strong><li>Siguenos:</li></strong>
+    <img className="img-red" src={ft} alt="" />&nbsp;&nbsp;
+    <img className="img-red" src={ip} alt="" />&nbsp;&nbsp;   
+    <img className="img-red" src={yt} alt="" />            
 </ul>
 </div>
 </div>
 {/*Column 2 */}
 <div className="col-md-3 col-sm-6">
 <div class="title-foot"> 
-<h4>Lorem Ipsum</h4>
+<h4>DONDE IR</h4>
 </div>
+<div className="card-foot">
 <ul className="list-unstyled"> 
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-</ul>        
+    <li>Costa Peruana</li>
+    <li>Andes Peruanos</li>
+    <li>Amazonia Peruana</li>
+    <li>Turismo Extremo</li>
+</ul> 
+ </div>      
 </div>
 {/*Column 3 */}
 <div className="col-md-3 col-sm-6">
 <div class="title-foot"> 
-<h4>Lorem Ipsum</h4>
+<h4>QUÉ HACER</h4>
 </div>
+<div className="card-foot">
 <ul className="list-unstyled"> 
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>    
-    <li>Lorem ipsum</li>            
-</ul>        
+    <li>Naturaleza y Aventura</li>
+    <li>Sol y Playa</li>
+    <li>Cultura</li>    
+    <li>Comunitario</li>            
+</ul>   
+</div>     
 </div>
 {/*Column 4 */}
 <div className="col-md-3 col-sm-6">
 <div class="title-foot"> 
-<h4>Lorem Ipsum</h4>
+<h4>TIPS DE VIAJE</h4>
 </div>
+<div className="card-foot">
 <ul className="list-unstyled"> 
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-</ul>        
+    <li>Acerca de Perú</li>
+    <li>Clima</li>
+    <li>Convertidor de Moneda</li>
+    <li>Visa y Embajadas</li>
+</ul>  
+</div>      
 </div>
 </div>
+
 {/* Footer Bootom */}
 <div className="foot-copy">
 <div className="footer-bottom">

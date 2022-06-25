@@ -28,10 +28,13 @@
 }
 
 .foot_princ {
-  background-color: rgb(213, 222, 214);
-  border: 3px solid;
+  background-image: url(../../assets/Image/img-foot.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
   width: 75%;
-  height: 300px;
+  min-height: 300px;
+  height: 100%;
   margin: auto;
   margin-top: 20px;
 }
@@ -39,7 +42,6 @@
 .title-foot {
   margin-top: 30px;
   margin-bottom: 20px;
-  
 }
 
 
@@ -51,5 +53,9 @@
 }
 
 .card-foot {
-  text-decoration: none;
+  font-weight: 700;
+}
+
+.img-red {
+  margin-top: 10px;
 }
