@@ -96,15 +96,15 @@ const Main = () => {
 
 <div className="col-md-3 col-sm-6">
 <div class="title-foot"> 
-<h4>Lorem Ipsum</h4>
+<img className="img-logo" src={ct} alt="" />
 </div>
 <div className="card-foot">
 <ul className="list-unstyled"> 
-    <li><a href="/">Lorem ipsum</a></li>
-    <li><a href="#">Lorem ipsum</a></li>
-    <li><a href="#">Lorem ipsum</a></li>    
-    <li><a href="#">Lorem ipsum</a></li>            
-</ul>        
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>    
+    <li>Lorem ipsum</li>            
+</ul>
 </div>
 </div>
 {/*Column 2 */}
@@ -113,10 +113,10 @@ const Main = () => {
 <h4>Lorem Ipsum</h4>
 </div>
 <ul className="list-unstyled"> 
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>    
-<li><a href="#">Lorem ipsum</a></li>            
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
 </ul>        
 </div>
 {/*Column 3 */}
@@ -125,10 +125,10 @@ const Main = () => {
 <h4>Lorem Ipsum</h4>
 </div>
 <ul className="list-unstyled"> 
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>    
-<li><a href="#">Lorem ipsum</a></li>            
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>    
+    <li>Lorem ipsum</li>            
 </ul>        
 </div>
 {/*Column 4 */}
@@ -137,10 +137,10 @@ const Main = () => {
 <h4>Lorem Ipsum</h4>
 </div>
 <ul className="list-unstyled"> 
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>
-<li><a href="#">Lorem ipsum</a></li>    
-<li><a href="#">Lorem ipsum</a></li>            
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
 </ul>        
 </div>
 </div>
