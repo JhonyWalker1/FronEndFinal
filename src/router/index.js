@@ -10,7 +10,7 @@ import Car from "../pages/Car";
 import CarView from "../pages/CarView";
 import CotiTours from "../pages/Compratours";
 import FinalView from "../pages/CompraEnd";
-
+import MisionView from "../pages/Mision";
 
 const Router = () =>{
     return(
@@ -24,6 +24,7 @@ const Router = () =>{
                 <Route path="compratours/:id" element={<CotiTours />} />
                 <Route path="carview" element={<CarView />} />
                 <Route path="gracias" element={<FinalView />}/>
+                <Route path="mision" element={<MisionView />}/>
             </Route>
             <Route element={<PrivateUser />}>
                 <Route path="profile" element={<Profile />} />
