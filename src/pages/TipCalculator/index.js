@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button,TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 const CalculateTip = () => {
 
@@ -27,9 +27,9 @@ const CalculateTip = () => {
    
 
     const reset = () => {
-        document.getElementById('amount').value = "";
+        document.getElementById('montototalpagado').value = "";
         document.getElementById('tiptext').value = "";
-        document.getElementById('cantpeople').value = "";
+        document.getElementById('cantidadpersonas').value = "";
         setPropinaporpersona(0);
         setMontototalpropina(0);
     }
