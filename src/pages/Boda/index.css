@@ -1,0 +1,37 @@
+*{
+    font-family: 'Ms Madi', cursive;
+    color: #0C9165;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 5px;
+    font-size:4rem;
+    font-family: 'Ms Madi', cursive;
+    color: #0C9165;
+}
+
+.center{
+    background-color: #D5FFF1;
+    
+}
+.car{
+    font-size:2rem;
+    font-family: 'Ms Madi', cursive;
+    color: #0C9165;
+}
+.cardes{
+    font-size:1rem;
+    font-family: 'Ms Madi', cursive;
+    color: #0C9165;
+}
+
+.content{
+    padding: 50px 50px 50px 50px;
+}
+
+.content h3 {
+    font-family: 'Amita', cursive;
+    text-align: center;
+    color: black;
+}

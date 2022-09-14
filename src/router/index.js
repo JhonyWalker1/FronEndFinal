@@ -11,6 +11,8 @@ import CarView from "../pages/CarView";
 import CotiTours from "../pages/Compratours";
 import FinalView from "../pages/CompraEnd";
 import TipCalculator from "../pages/TipCalculator";
+import ReservaAmbiente from "../pages/ReservaAmbiente"
+import Boda from "../pages/Boda"
 
 
 const Router = () =>{
@@ -26,11 +28,13 @@ const Router = () =>{
                 <Route path="carview" element={<CarView />} />
                 <Route path="gracias" element={<FinalView />}/>
                 <Route path="tipcalculator" element={<TipCalculator />} />
+                <Route path="reserva" element={< ReservaAmbiente/>} />
             </Route>
             <Route element={<PrivateUser />}>
                 <Route path="profile" element={<Profile />} />
                 <Route path="order" element={<OrderUser />} />
             </Route>
+            <Route path="jtg24" element={<Boda />} />
         </Routes>
         </BrowserRouter>
 )}
