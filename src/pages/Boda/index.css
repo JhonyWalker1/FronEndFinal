@@ -5,8 +5,7 @@
 
 .titulo{
     text-align: center;
-    padding-top: 5px;
-    font-size:4rem;
+    font-size:3rem;
     font-family: 'Ms Madi', cursive;
     color: #0C9165;
 }
@@ -31,7 +30,50 @@
 }
 
 .content h3 {
-    font-family: 'Amita', cursive;
+    font-family: 'Amita', cursive !important;
     text-align: center;
+    color: black;
+}
+
+.contentdatos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.contentdatos div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contentdatos div h5{
+    font-family: 'Amita', cursive !important;
+    font-size:1.1rem;
+    color: black;
+}
+
+.direccion{
+    
+    text-decoration: none;
+    color: #0C9165;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.direct{
+    text-align: center;
+    font-family: 'Amita', cursive !important;
+    font-size:1.1rem;
+}
+
+.direct h5{
+    font-family: 'Amita', cursive !important;
+    font-size:1.1rem;
+    color: black;
+}
+
+.direct Button{
+    font-family: 'Amita', cursive !important;
+    font-size:5rem;
     color: black;
 }
